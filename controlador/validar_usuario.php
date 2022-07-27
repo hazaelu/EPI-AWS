@@ -29,11 +29,13 @@
             <script src="../vista/pantallas/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
             <script src="../vista/pantallas/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
             <script src="../vista/pantallas/revolution/js/extensions/revolution.extension.video.min.js"></script>
-            
+<?php
+   require '../aws/aws-autoloader.php';
+?>            
 <?php session_start();
     
-    $conn=mysqli_connect('localhost', 'root', '*123*456*', 'ensayo');
-    #$conn=mysqli_connect('database-1.cutvdxplo4yk.us-west-2.rds.amazonaws.com:3306', 'epi', '123456789', 'EPI');
+    #$conn=mysqli_connect('localhost', 'root', '*123*456*', 'ensayo');
+    $conn=mysqli_connect('database-1.cutvdxplo4yk.us-west-2.rds.amazonaws.com:3306', 'epi', '123456789', 'EPI');
     /* comprobar la conexión */
     if (mysqli_connect_errno()) {
     printf("Falló la conexión: %s\n", mysqli_connect_error());
